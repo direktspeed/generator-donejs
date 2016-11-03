@@ -1,4 +1,5 @@
-var validate = require("validate-npm-package-name");
+var validate = require('validate-npm-package-name');
+var debug = require('debug')
 var generators = require('yeoman-generator');
 var path = require('path');
 var _ = require('lodash');
@@ -157,7 +158,8 @@ module.exports = generators.Base.extend({
     }
 
     if(!this.options.packages) {
-      throw new Error('No DoneJS dependency package list provided!');
+      debug('No DoneJS dependency package list provided!');
+      this.options.packages = require('../package.json').donejs;
     }
 
     this.log('Writing package.json v' + this.options.version);
@@ -175,7 +177,7 @@ module.exports = generators.Base.extend({
       // https://github.com/npm/npm/issues/3763
       self.fs.copyTpl(
         self.templatePath(name),
-        self.destinationPath((name === "_gitignore") ? ".gitignore" : name),
+        self.destinationPath((name === '_gitignore') ? '.gitignore' : name),
         self.props
       );
     });

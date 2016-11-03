@@ -1,5 +1,5 @@
 var validate = require('validate-npm-package-name');
-var debug = require('debug')
+var debug = require('debug');
 var generators = require('yeoman-generator');
 var path = require('path');
 var _ = require('lodash');

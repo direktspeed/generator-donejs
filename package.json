@@ -73,7 +73,7 @@
     "fs-extra": ">=0.26.5",
     "semver": ">=5.1.0",
     "validate-npm-package-name": ">=2.2.2",
-    "yeoman-generator": ">=0.20.2"
+    "yeoman-generator": ">=1.0.1"
   },
   "devDependencies": {
     "coveralls-send": "0.0.2",
